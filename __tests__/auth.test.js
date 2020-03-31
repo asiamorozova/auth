@@ -52,7 +52,7 @@ describe('auth routes', () => {
 
     return request(app)
       .post('/api/v1/auth/login')
-      .send({ username: 'spot', password: 'badPassword!oops' })
+      .send({ username: 'spot', password: 'badPassword!' })
       .then(res => {
         expect(res.body).toEqual({
           message: 'Invalid username/password',  // because we send a bad password
